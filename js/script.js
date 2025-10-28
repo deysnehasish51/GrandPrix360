@@ -17,7 +17,7 @@ const heroContent = [
   {
     tag: 'PERFORMANCE',
     heading: 'HITTING THE<br>APEX HEAD ON',
-    desc: ' At Grand Prix Riders, performance isn’t just a measure, it’s a mindset. From sharp turns to full-throttle straights, we chase perfection, precision, and pure adrenaline on every ride. Join us where the limits disappear and speed becomes an art form.'
+    desc: ' At Grand Prix Riders, performance isn’t just a measure, it’s a mindset. From sharp turns to full-throttle straights, we chase perfection, precision, and pure adrenaline on every ride.'
   },
   {
     tag: 'SPEED',
