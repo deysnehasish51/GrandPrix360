@@ -97,3 +97,22 @@ const cultureObserver = new IntersectionObserver((entries) => {
 sections.forEach((section) => {
   cultureObserver.observe(section);
 });
+
+document.addEventListener("DOMContentLoaded", () => {
+  const ridingImg = document.querySelector(".riding-image img");
+  if (!ridingImg) return;
+
+  const observer = new IntersectionObserver(
+    (entries, observer) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("pop-in");
+          observer.unobserve(entry.target);
+        }
+      });
+    },
+    { threshold: 0.3 }
+  );
+
+  observer.observe(ridingImg);
+});
