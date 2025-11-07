@@ -116,3 +116,17 @@ document.addEventListener("DOMContentLoaded", () => {
 
   observer.observe(ridingImg);
 });
+
+
+const imgs = document.querySelectorAll('.rev img, .riding-image > img');
+
+const observerImg = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('pop-in');
+      observerImg.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.3 });
+
+imgs.forEach(img => observerImg.observe(img));

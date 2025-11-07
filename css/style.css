@@ -1333,12 +1333,11 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0 122px;
+  padding: 100px 122px;
   background-color: white;
   position: relative;
   overflow: hidden;
   font-family: 'Oswald', sans-serif;
-  margin-bottom: 60px;
 }
 
 .riding-content {
@@ -1373,24 +1372,53 @@ body {
 
 .riding-image {
   width: 50%;
+  height: auto;
   display: flex;
-  position:relative;
+  position: relative;
+  align-items: center;
 }
 
-.riding-image img {
+.rev {
+  position: absolute;
+  bottom: 130px;
+  width: 150px;
+  height: 150px;
+  display: flex;
+  align-items: center;
+  z-index: 4;
+
+}
+
+.rev img {
   width: 100%;
   height: auto;
-  z-index: 3;
   position: relative;
+  z-index: 2;
   opacity: 0;
   transform: scale(0.9);
-  transition: all 1s ease;
+  transition: opacity 1s ease, transform 1s ease;
+  will-change: opacity, transform;
 }
-.riding-image img.pop-in {
+.rev img.pop-in {
   opacity: 1;
   transform: scale(1);
 }
 
+.riding-image > img {
+  width: 80%;
+  height: auto;
+  left: 25%;
+  z-index: 3;
+  position: relative;
+  opacity: 0;
+  transform: scale(0.9);
+  transition: opacity 1s ease, transform 1s ease;
+  will-change: opacity, transform;
+}
+.riding-image > img.pop-in {
+  opacity: 1;
+  transform: scale(1);
+}
 .bg-text {
   position: absolute;
   top: 50%;
@@ -1402,7 +1430,7 @@ body {
   z-index: 1;
   pointer-events: none;
   letter-spacing: 10px;
-  padding-right: 120px;
+  padding-right: 250px;
 }
 
 @media (max-width: 992px) {
@@ -1433,6 +1461,11 @@ body {
 
   .riding-image img {
     width: 80%;
+    padding-right: 150px;
+  }
+  .rev 
+  {
+    opacity: 0;
   }
 
   .bg-text {

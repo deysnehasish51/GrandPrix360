@@ -44,19 +44,16 @@ document.addEventListener("DOMContentLoaded", () => {
   observer.observe(ridingImg);
 });
 
-// Get DOM elements
-const searchInput = document.getElementById('searchInput');
-const searchBtn = document.getElementById('searchBtn');
-const resultBox = document.getElementById('result'); // Optional display area
+const imgs = document.querySelectorAll('.rev img, .riding-image > img');
 
-// Trigger search on button click
-searchBtn.addEventListener('click', performSearch);
+const observerImg = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('pop-in');
+      observerImg.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.3 });
 
-// Trigger search on Enter key press
-searchInput.addEventListener('keypress', (e) => {
-  if (e.key === 'Enter') {
-    performSearch();
-  }
-});
-
+imgs.forEach(img => observerImg.observe(img));
 
