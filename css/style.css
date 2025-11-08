@@ -1110,8 +1110,6 @@ body {
     display: none;
   }
 }
-
-
 .timer
 {
   width: 100%;
@@ -1380,7 +1378,7 @@ body {
 
 .rev {
   position: absolute;
-  bottom: 130px;
+  bottom: 40px;
   width: 150px;
   height: 150px;
   display: flex;
