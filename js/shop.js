@@ -1,3 +1,12 @@
+window.addEventListener('scroll', function() {
+  const stickyHeader = document.querySelector('.sticky-header');
+  if (window.scrollY > 150) {
+    stickyHeader.classList.add('active');
+  } else {
+    stickyHeader.classList.remove('active');
+  }
+});
+
 const slides = document.querySelectorAll('.hero-slide');
 const nextBtn = document.querySelector('.right-arrow');
 const prevBtn = document.querySelector('.left-arrow');
